@@ -3200,7 +3200,16 @@ class View {
     _data;
     _errorMessage = "Somehow this recipe isn't in our cookbooks. Search for a different recipe or add a new recipe!";
     _message = "Default message text";
-    render(data, render = true) {
+    // example of a JSDoc
+    /**
+   * Render the received object to the DOM
+   * @param {Object | Object []} data the data to be rendered (e.g., recipe)
+   * @param {boolean} [render=true] If false, create markup string instead of rendering to the DOM
+   * @returns {undefined | string} A markup string is returned if render=false
+   * @this {Object} View instance
+   * @author Ahmad Abu-Aysha, guided by Jonas Schmedtmann
+   * @todo finish implementation
+   */ render(data, render = true) {
         if (!data || Array.isArray(data) && data.length === 0) return this.renderError();
         this._data = data;
         const markup = this._generateMarkup();
