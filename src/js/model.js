@@ -112,7 +112,7 @@ const init = function () {
 };
 
 init();
-console.log(state.bookmarks);
+// console.log(state.bookmarks);
 
 export const updloadRecipe = async function (newRecipe) {
   try {
@@ -126,7 +126,7 @@ export const updloadRecipe = async function (newRecipe) {
             'Wrong ingredient format, please use the correct format "Qty, Unit, Descr"'
           );
         }
-        console.log(ingrArr);
+        // console.log(ingrArr);
 
         const [quantity, unit, description] = ingrArr;
 
@@ -145,7 +145,7 @@ export const updloadRecipe = async function (newRecipe) {
 
     const data = await AJAX(`${API_URL}?key=${API_KEY}`, recipe);
     state.recipe = createRecipeObject(data);
-    console.log(data);
+    // console.log(data);
     addBookmark(state.recipe);
   } catch (err) {
     throw err;
